@@ -30,4 +30,7 @@ def index_page(request):
     for i in all_workers:
         print(f'{i.second_name} {i.name} {i.salary} {i.id}')
 
-    return render(request, 'index.html')
+    text = 'Некоторый текст, который будет отображен на странице'
+    dct_example = {'data': all_workers, 'text': text}
+    # return render(request, 'index.html', context={'data': 5, 'text': text})
+    return render(request, 'index.html', context=dct_example)
